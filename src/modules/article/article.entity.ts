@@ -1,6 +1,7 @@
-import { Entity, ManyToOne, Property, t, type Opt } from '@mikro-orm/core';
+import { Collection, Entity, ManyToMany, ManyToOne, Property, t, type Opt } from '@mikro-orm/core';
 import { BaseEntity } from '../common/base.entity.js';
 import { User } from '../user/user.entity.js';
+import type { Tag } from './tag.entity.ts';
 
 function convertToSlug(text: string) {
 	return text.toLowerCase()
@@ -25,6 +26,9 @@ export class Article extends BaseEntity {
 
 	@ManyToOne()
 	author: User;
+
+	@ManyToMany()
+	tags = new Collection<Tag>(this);
 
 	constructor(title: string, text: string, author: User) {
 		super();

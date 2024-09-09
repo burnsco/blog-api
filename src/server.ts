@@ -11,10 +11,11 @@ async function main() {
 	await orm.schema.refreshDatabase();
 
 	// create new user entity instance via constructor
-	const user = new User();
-	user.email = 'foo@bar.com';
-	user.username = 'Foo Bar';
-	user.password = '123456';
+	const user = new User(
+		'cburns',
+		'corey@gmail.com',
+		'123456'
+	);
 
 	// fork first to have a separate context
 	const em = orm.em.fork();
