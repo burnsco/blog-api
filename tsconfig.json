@@ -6,7 +6,9 @@
 		"strict": true,
 		"outDir": "dist",
 		"declaration": true,
-		"experimentalDecorators": true
+		"experimentalDecorators": true,
+		"noEmit": true,
+		"allowImportingTsExtensions": true
 	},
 	"include": [
 		"./src/**/*.ts",
