@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"target": "ES2022",
+		"strict": true,
+		"outDir": "dist",
+		"declaration": true,
+		"experimentalDecorators": true
+	},
+	"include": [
+		"./src/**/*.ts",
+		"src/mikro-orm.config.js"
+	],
+	"ts-node": {
+		"esm": true,
+		"transpileOnly": true
+	}
+}
